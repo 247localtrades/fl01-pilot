@@ -1,5 +1,4 @@
 ---
-import '../styles/global.css';
 /**
  * BaseLayout.astro — Master page wrapper
  * Version: 2.0
@@ -29,6 +28,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="/styles/global.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
