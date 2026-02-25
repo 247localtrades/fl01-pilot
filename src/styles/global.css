@@ -9,3 +9,119 @@
      - Header: dark glassmorphism (was white with border)
      - Hero: charcoal gradient (was navy gradient)
    ================================================================ */
+
+:root {
+  /* Brand palette — from logo */
+  --brand-dark: #2A313B;
+  --brand-dark-deep: #222831;
+  --brand-dark-mid: #333A46;
+  --brand-teal: #63D0CA;
+  --brand-teal-bright: #6AC3C1;
+  --brand-teal-muted: #5399A3;
+  --brand-teal-dark: #3BA8A0;
+  --brand-blue: #73B0DC;
+  --brand-blue-light: #8EC4E8;
+  --brand-blue-dark: #5A95C0;
+
+  /* Neutrals */
+  --white: #FFFFFF;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-500: #64748B;
+  --slate-600: #94A3B8;
+  --slate-700: #334155;
+
+  /* Functional */
+  --green-500: #22C55E;
+  --green-600: #16A34A;
+  --red-500: #EF4444;
+  --orange-500: #F97316;
+  --orange-600: #EA580C;
+
+  /* Semantic tokens */
+  --bg-primary: var(--white);
+  --bg-dark: var(--brand-dark-deep);
+  --bg-section: var(--slate-100);
+  --text-primary: var(--brand-dark);
+  --text-secondary: var(--slate-500);
+  --text-inverse: var(--white);
+  --accent: var(--brand-teal);
+  --cta-bg: var(--orange-500);
+  --cta-hover: var(--orange-600);
+  --trust: var(--green-500);
+
+  /* Typography */
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(42,49,59,0.08);
+  --shadow-md: 0 4px 12px rgba(42,49,59,0.12);
+  --shadow-lg: 0 8px 30px rgba(42,49,59,0.16);
+  --shadow-cta: 0 4px 14px rgba(249,115,22,0.35);
+}
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);color:var(--text-primary);background:var(--bg-primary);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font:inherit}
+
+/* Typography */
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.2}
+h1{font-size:clamp(1.75rem,4vw,2.5rem)}
+h2{font-size:clamp(1.4rem,3vw,2rem)}
+h3{font-size:clamp(1.15rem,2.5vw,1.5rem)}
+p{margin-bottom:var(--space-md)}
+
+/* Layout */
+.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 var(--space-lg)}
+.section{padding:var(--space-3xl) 0}
+.section--alt{background:var(--bg-section)}
+.section--dark{background:var(--bg-dark);color:var(--text-inverse)}
+
+/* Utility header (top strip) */
+.utility-header{
+  background:#181c22;
+  color:var(--slate-600);
+  font-size:0.75rem;
+  font-weight:500;
+  padding:0.35rem 0;
+  text-align:center;
+  letter-spacing:0.02em;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.utility-header span{margin:0 0.6rem;opacity:0.4}
+.utility-header a{color:var(--slate-300)}
+
+/* Site header — dark glassmorphism */
+.site-header{
+  background:rgba(34,40,49,0.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:0 var(--space-lg);
+}
+.site-header__inner{
+  g
