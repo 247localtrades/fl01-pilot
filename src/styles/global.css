@@ -718,6 +718,8 @@ p{margin-bottom:var(--space-md)}
     inset 0 1px 0 rgba(210,235,250,0.55),
     inset 0 -1px 2px rgba(0,0,0,0.2);
   filter: brightness(1.04);
+  color: #fce88a;
+  transition: color 0.2s ease;
 }
 .nav-cta:active {
   transform: translateY(3px);
