@@ -23,12 +23,12 @@ interface Props {
 const { title, description, canonical, noindex = false, schema } = Astro.props;
 const siteUrl = 'https://247localtrades.com';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/styles/global.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
@@ -122,5 +122,6 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
   </div>
 
 
+  <style is:global>@import '../styles/global.css';</style>
 </body>
 </html>
