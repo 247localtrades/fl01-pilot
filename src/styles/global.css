@@ -1,17 +1,17 @@
 /* ================================================================
-   247 Local Trades — Global Design System
+   247 Local Trades â Global Design System
    Version: 2.0 | Updated from v1.0 navy/orange to charcoal/teal
    
    PALETTE SOURCE: Brand Guide + Logo (teal #63D0CA, blue #73B0DC)
    BREAKING CHANGES from v1.0:
-     - --navy-* vars → --brand-dark-* vars
-     - --orange-* vars → --brand-teal-* and --orange-* (CTA only)
+     - --navy-* vars â --brand-dark-* vars
+     - --orange-* vars â --brand-teal-* and --orange-* (CTA only)
      - Header: dark glassmorphism (was white with border)
      - Hero: charcoal gradient (was navy gradient)
    ================================================================ */
 
 :root {
-  /* Brand palette — from logo */
+  /* Brand palette â from logo */
   --brand-dark: #2A313B;
   --brand-dark-deep: #222831;
   --brand-dark-mid: #333A46;
@@ -76,7 +76,7 @@
   --shadow-lg: 0 8px 30px rgba(42,49,59,0.16);
   --shadow-cta: 0 4px 14px rgba(249,115,22,0.35);
 }
-/* Override: nav-cta is an <a> inside site-header__nav — needs specificity boost */
+/* Override: nav-cta is an <a> inside site-header__nav â needs specificity boost */
 .site-header__nav a.nav-cta,
 .site-footer a.nav-cta {
   color: #ffffff !important;
@@ -122,7 +122,7 @@ p{margin-bottom:var(--space-md)}
 .utility-header span{margin:0 0.6rem;opacity:0.4}
 .utility-header a{color:var(--slate-300)}
 
-/* Site header — dark glassmorphism */
+/* Site header â dark glassmorphism */
 .site-header{
   background:rgba(34,40,49,0.92);
   backdrop-filter:blur(12px);
@@ -169,7 +169,7 @@ p{margin-bottom:var(--space-md)}
 .site-header__nav a{font-size:0.88rem;font-weight:500;color:var(--slate-600);transition:color 0.2s}
 .site-header__nav a:hover{color:var(--white)}
 
-/* Buttons — general purpose (non-chrome) */
+/* Buttons â general purpose (non-chrome) */
 .btn{display:inline-flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-md);font-weight:600;font-size:1rem;transition:all 0.2s;white-space:nowrap}
 .btn--primary{background:var(--cta-bg);color:var(--white);box-shadow:var(--shadow-cta)}
 .btn--primary:hover{background:var(--cta-hover);transform:translateY(-1px)}
@@ -206,7 +206,7 @@ p{margin-bottom:var(--space-md)}
   border:1px solid rgba(99,208,202,0.2);
   margin-bottom:1.75rem;
 }
-.hero__tagline::before{content:'✓';color:var(--green-500);font-weight:800}
+.hero__tagline::before{content:'â';color:var(--green-500);font-weight:800}
 
 .hero h1{color:var(--white);margin-bottom:var(--space-md);max-width:700px;font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em}
 .hero__subtitle{font-size:clamp(1rem,2.2vw,1.15rem);font-weight:400;color:var(--slate-600);max-width:560px;margin-bottom:2.5rem;line-height:1.6}
@@ -256,28 +256,32 @@ p{margin-bottom:var(--space-md)}
 /* Breadcrumb */
 .breadcrumb{padding:var(--space-md) 0;font-size:0.85rem;color:var(--slate-500)}
 .breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:var(--space-xs)}
-.breadcrumb li::after{content:' ›';margin-left:var(--space-xs)}
+.breadcrumb li::after{content:' âº';margin-left:var(--space-xs)}
 .breadcrumb li:last-child::after{content:''}
 .breadcrumb a{color:var(--brand-teal)}
 
 /* Sticky phone bar (mobile) */
-.sticky-phone{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--green-600);padding:var(--space-sm) var(--space-md);box-shadow:0 -4px 12px rgba(0,0,0,0.2)}
-.sticky-phone a{display:flex;align-items:center;justify-content:center;gap:var(--space-sm);color:var(--white);font-weight:700;font-size:1.125rem}
+.sticky-phone{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--brand-dark-deep);border-top:2px solid var(--brand-teal);padding:var(--space-sm) var(--space-md);box-shadow:0 -4px 16px rgba(0,0,0,0.4)}
+.sticky-phone a{display:flex;align-items:center;justify-content:center;gap:var(--space-sm);color:var(--brand-teal);font-weight:700;font-size:1.125rem}
 
 /* Responsive */
 @media(max-width:768px){
   .site-header__nav a:not(.nav-cta){display:none}
+  .nav-cta{display:none}
+  .site-header__inner{height:52px}
+  .site-header__logo{font-size:1rem}
+  .logo-icon{width:28px;height:28px;font-size:0.6rem;border-radius:6px}
   .site-footer__grid{grid-template-columns:1fr}
   .hero{padding:3rem var(--space-md) 3.5rem}
   .hero__trust{gap:0.8rem 1.2rem}
   .sticky-phone{display:block}
-  body{padding-bottom:56px}
+  body{padding-bottom:60px}
   .trust-bar{flex-direction:column;align-items:center}
 }
 
 /* Import chrome bar styles */
 /* ================================================================
-   CHROME METAL BAR CTAs — Mirror-Polished Design System
+   CHROME METAL BAR CTAs â Mirror-Polished Design System
    Version: 1.0 | Source: 247LT_Full_Hero_v7.2
    
    DEPENDS ON: global.css (CSS custom properties)
@@ -433,7 +437,7 @@ p{margin-bottom:var(--space-md)}
 
 
 /* ================================================================
-   GOLD BAR — Request Service (primary CTA)
+   GOLD BAR â Request Service (primary CTA)
    ================================================================ */
 .bar--gold {
   width: 265px; height: 62px; font-size: 0.94rem;
@@ -503,7 +507,7 @@ p{margin-bottom:var(--space-md)}
 
 
 /* ================================================================
-   STEEL BAR — Call Live Agent (secondary CTA)
+   STEEL BAR â Call Live Agent (secondary CTA)
    ================================================================ */
 .bar--steel {
   width: 265px; height: 62px; font-size: 0.94rem;
@@ -573,7 +577,7 @@ p{margin-bottom:var(--space-md)}
 
 
 /* ================================================================
-   TEAL BAR — Text Us (tertiary CTA)
+   TEAL BAR â Text Us (tertiary CTA)
    ================================================================ */
 .bar--teal {
   width: 265px; height: 62px; font-size: 0.94rem;
@@ -643,7 +647,7 @@ p{margin-bottom:var(--space-md)}
 
 
 /* ================================================================
-   NAV CTA — Miniature steel chrome bar for header
+   NAV CTA â Miniature steel chrome bar for header
    ================================================================ */
 .nav-cta {
   position: relative;
@@ -743,7 +747,7 @@ p{margin-bottom:var(--space-md)}
 
 
 /* ================================================================
-   RESPONSIVE — Chrome bars
+   RESPONSIVE â Chrome bars
    ================================================================ */
 @media (max-width: 768px) {
   .brow { flex-direction: column; align-items: center; gap: 1.2rem; }
