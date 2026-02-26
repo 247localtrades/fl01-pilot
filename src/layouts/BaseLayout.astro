@@ -61,7 +61,7 @@ Licensed &amp; Insured <img src="/icon.svg" alt="" aria-hidden="true" style="wid
   <!-- Site header – dark glassmorphism -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="/" class="site-header__logo"><img src="/logo.svg" alt="247 Local Trades" style="height:34px;width:auto;display:block;"></a>
+      <a href="/" class="site-header__logo"><img src="/logo.svg" alt="247 Local Trades" style="height:44px;width:auto;display:block;"></a>
       <nav class="site-header__nav">
         <a href="/service/">Request Service</a>
         <a href="/vendors/">For Contractors</a>
@@ -122,6 +122,14 @@ Licensed &amp; Insured <img src="/icon.svg" alt="" aria-hidden="true" style="wid
   /* nav-cta text: white default, gold on hover */
   .nav-cta { color: #ffffff; }
   .nav-cta .nav-text { color: inherit; }
-  .nav-cta:hover { color: #fce88a; transition: color 0.2s ease; }</style>
+.nav-cta:hover { color: #fce88a; transition: color 0.2s ease; }
+  /* header height with tagline */
+  .site-header__inner { height: 68px; }
+  /* mobile: hide utility bar, shrink logo */
+  @media (max-width: 768px) {
+    .utility-header { display: none; }
+    .site-header__logo img { height: 34px; }
+    .site-header__inner { height: 56px; }
+  }</style>
 </body>
 </html>
