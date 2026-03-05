@@ -1,0 +1,62 @@
+---
+// TrustBlock.astro
+// 247 Certified 4-pillar trust section.
+// Copy is LOCKED per Dev Workflow Guide v1.2 + MKB D-CERT-01.
+// DO NOT rewrite copy without governance approval.
+import { brand } from '../data/config';
+
+interface Props {
+  dark?: boolean;
+  compact?: boolean;
+  showRating?: boolean;
+  reviewCount?: number;
+  ratingValue?: number;
+}
+
+const {
+  dark = false,
+  compact = false,
+  showRating = false,
+  reviewCount = 0,
+  ratingValue = 0,
+} = Astro.props;
+
+const renderRating = showRating && reviewCount >= 5;
+---
+
+<section
+  class={`trust-block${dark ? ' trust-block--dark' : ''}${compact ? ' trust-block--compact' : ''}`}
+  aria-labelledby="trust-heading"
+>
+  <div class="container">
+    <div class="trust-header">
+      <h2 id="trust-heading" class="trust-title">{brand.certified.headline}</h2>
+    </div>
+    <div class="trust-pillars">
+      {brand.certified.pillars.map((pillar) => (
+        <div class="trust-pillar" id={`pillar-${pillar.id}`}>
+          <div class="pillar-icon" aria-hidden="true">{pillar.icon}</div>
+          <div class="pillar-content">
+            <h3 class="pillar-title">{pillar.title}</h3>
+            <p class="pillar-text">{pillar.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="trust-disclaimer">{brand.certified.disclaimer}</p>
+  </div>
+</section>
+
+<style>
+  .trust-block { padding-block: var(--space-3xl); background: var(--bg-section); }
+  .trust-block--dark { background: var(--brand-dark); color: var(--text-inverse); }
+  .trust-header { text-align: center; margin-bottom: var(--space-2xl); }
+  .trust-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem; }
+  .trust-block--dark .trust-title { color: var(--text-inverse); }
+  .trust-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-lg); }
+  .trust-pillar { display: flex; gap: var(--space-md); align-items: flex-start; padding: var(--space-lg); background: var(--brand-white); border-radius: var(--radius-lg); border: 1px solid var(--brand-gray-light); border-top: 3px solid var(--brand-teal); box-shadow: var(--shadow-card); }
+  .pillar-icon { font-size: 1.75rem; flex-shrink: 0; }
+  .pillar-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; }
+  .pillar-text { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+  .trust-disclaimer { font-size: 0.75rem; color: var(--text-secondary); text-align: center; max-width: 600px; margin-inline: auto; }
+</style>
