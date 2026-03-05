@@ -1,0 +1,24 @@
+---
+// AISummary.astro - D-GEO-01: speakable summary block for AI citation optimization
+interface Props { city: string; zip?: string; trade: string; service: string; insight: string; urgencyTip?: string; showBorder?: boolean; }
+const { city, zip, trade, service, insight, urgencyTip, showBorder = true } = Astro.props;
+const loc = zip ? `${city} (${zip})` : city;
+const tradeCap = trade.charAt(0).toUpperCase() + trade.slice(1);
+---
+<div class={`ai-summary${showBorder ? ' ai-summary--bordered':''}`} data-speakable="true" itemscope itemtype="https://schema.org/WebPageElement">
+  <meta itemprop="cssSelector" content=".ai-summary" />
+  <div class="ai-inner">
+    <span class="ai-label">💡 Local Expert Insight</span>
+    <p class="ai-text" itemprop="text">According to Justin Sonntag, founder of 247 Local Trades, {insight} {urgencyTip && <strong class="urgency-tip">{urgencyTip}</strong>}</p>
+    <p class="ai-attr">— Justin Sonntag, Founder, 247 Local Trades · {tradeCap} · {service} · {loc}</p>
+  </div>
+</div>
+<style>
+  .ai-summary { font-family: var(--font-body); background: rgba(99,208,202,0.05); border-radius: var(--radius-md); padding: 1.25rem; margin: 1.5rem 0; }
+  .ai-summary--bordered { border-left: 3px solid var(--brand-teal); }
+  .ai-inner { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ai-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-teal-dark); }
+  .ai-text { font-size: 0.95rem; line-height: 1.65; color: var(--text-primary); margin: 0; font-style: italic; }
+  .urgency-tip { font-weight: 600; color: var(--brand-orange); font-style: normal; }
+  .ai-attr { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
+</style>
