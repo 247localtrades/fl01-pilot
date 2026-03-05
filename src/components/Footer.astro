@@ -1,0 +1,216 @@
+---
+import { brand } from '../data/config';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="247 Local Trades">
+          <span class="footer-logo-mark">247</span>
+          <span class="footer-logo-text">Local Trades</span>
+        </a>
+        <p class="footer-tagline">{brand.tagline}</p>
+        <p class="footer-desc">Exclusive leads. No bidding wars. One verified contractor per job â for HVAC, plumbing, electrical, and roofing across Northwest Florida.</p>
+        <div class="footer-badges">
+          <span class="badge">ð Licensed &amp; Insured</span>
+          <span class="badge">â Background Checked</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/florida/pensacola/hvac">HVAC â Pensacola</a></li>
+          <li><a href="/florida/gulf-breeze/hvac">HVAC â Gulf Breeze</a></li>
+          <li><a href="/florida/pensacola/plumbing">Plumbing</a></li>
+          <li><a href="/florida/pensacola/electrical">Electrical</a></li>
+          <li><a href="/florida/pensacola/roofing">Roofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About 247LT</a></li>
+          <li><a href="/contractors">For Contractors</a></li>
+          <li><a href="/service">Request Service</a></li>
+          <li><a href="/florida">Coverage Area</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href={`tel:${brand.phone.hvac.replace(/\D/g,'')}`}>HVAC: {brand.phone.hvac}</a></li>
+          <li><a href={`tel:${brand.phone.plumbing.replace(/\D/g,'')}`}>Plumbing: {brand.phone.plumbing}</a></li>
+          <li><a href={`tel:${brand.phone.electrical.replace(/\D/g,'')}`}>Electrical: {brand.phone.electrical}</a></li>
+          <li><a href={`tel:${brand.phone.roofing.replace(/\D/g,'')}`}>Roofing: {brand.phone.roofing}</a></li>
+          <li><a href={`mailto:${brand.email}`}>{brand.email}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; {year} {brand.legal.company}. All rights reserved.
+        247 Local Trades is a lead generation platform. We connect homeowners with pre-verified local contractors.
+        We are not a licensed contractor. Contractor licensing, insurance, and workmanship are the sole responsibility of the individual contractor.
+      </p>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--brand-dark-deep, #222831);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 56px 0 0;
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Brand column */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-bottom: 14px;
+  }
+  .footer-logo-mark {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--brand-teal, #63D0CA);
+    letter-spacing: -1px;
+  }
+  .footer-logo-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .footer-tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-teal, #63D0CA);
+    margin: 0 0 10px;
+    font-style: italic;
+  }
+  .footer-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+  .footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.06);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Nav columns */
+  .footer-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 16px;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.15s;
+    line-height: 1.4;
+  }
+  .footer-col a:hover {
+    color: var(--brand-teal, #63D0CA);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    padding: 24px 0 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-legal {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+  .footer-links a:hover {
+    color: rgba(255,255,255,0.7);
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 540px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>
